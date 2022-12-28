@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useCounterStore } from '@/stores/counter';
+import { computed } from '@vue/reactivity';
 
 const store = useCounterStore();
 
@@ -11,7 +12,7 @@ function decrement() {
   store.count--;
 }
 
-const countDigitsLength = store.count.toString().length;
+const countDigitsLength = computed(() => store.count.toString().length);
 
 </script>
 
