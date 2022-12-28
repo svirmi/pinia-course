@@ -8,5 +8,7 @@ export const useCounterStore = defineStore('counter', () => {
     count.value++
   }
 
-  return { count, doubleCount, increment }
+  const countDigitsLength = computed(() => count.value.toString().length);
+
+  return { count, doubleCount, increment, countDigitsLength }
 })

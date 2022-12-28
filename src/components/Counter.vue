@@ -4,15 +4,9 @@ import { computed } from '@vue/reactivity';
 
 const store = useCounterStore();
 
-function increment() {
-  store.count++;
-}
-
 function decrement() {
   store.count--;
 }
-
-const countDigitsLength = computed(() => store.count.toString().length);
 
 </script>
 
@@ -21,9 +15,9 @@ const countDigitsLength = computed(() => store.count.toString().length);
     <br />
     <button @click="decrement">-</button>
     Counter value: {{ store.count }}
-    <button @click="increment">+</button>
+    <button @click="store.increment">+</button>
     <br />
-    Counter has {{ countDigitsLength }} digits
+    Counter has {{ store.countDigitsLength }} digits
   </div>
 </template>
 
