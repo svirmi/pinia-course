@@ -1,15 +1,23 @@
 <script setup lang="ts">
 
-import { useCounterStore } from '@/stores/counter';
-import Counter from '@/components/Counter.vue';
+  import Counter from '@/components/Counter.vue';
 
-const store = useCounterStore();
+  import { useAuthStore } from '@/stores/auth';
+  import { storeToRefs } from 'pinia';
+
+  const { isAuthenticated, user } = storeToRefs(useAuthStore()); // destructuring and reactivity see here https://youtu.be/G4H6QOcGKbU?t=3434
 
 </script>
 
 <template>
   <main>
-    Home page
+    <br />
+
+    <div v-if="isAuthenticated">
+      User name is : {{ user.name }}
+    </div>
+    
     <Counter />
+
   </main>
 </template>
