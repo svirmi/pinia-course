@@ -9,13 +9,7 @@ function logout() {
 }
 
 function login() {
-  authStore.$state = {
-    isAuthenticated: true,
-    user: {
-      name: "LoginUser Name",
-      email: "mail@server.nl",
-    },
-  };
+  authStore.$reset();
 }
 </script>
 
