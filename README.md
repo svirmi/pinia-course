@@ -17,3 +17,5 @@ npm run build
 ```sh
 npm run lint
 ```
+
+https://youtu.be/G4H6QOcGKbU?t=3512
