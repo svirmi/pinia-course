@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useCounterStore } from "@/stores/counter";
-
 const store = useCounterStore();
 </script>
 
@@ -12,6 +11,8 @@ const store = useCounterStore();
     <button @click="store.increment">+</button>
     <br />
     Counter has {{ store.countDigitsLength }} digits
+    <br />
+    Doubled Counter value is {{ store.doubleCount }}
   </div>
 </template>
 
