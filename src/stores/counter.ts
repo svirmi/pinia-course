@@ -12,15 +12,20 @@ export const useCounterStore = defineStore("counter", () => {
 
   // like actions?
   function increment() {
-    if (authStore.isAuthenticated) {
+    if (isAuthenticated()) {
       count.value++;
     }
   }
 
   function decrement() {
-    if (authStore.isAuthenticated) {
+    if (isAuthenticated()) {
       count.value--;
     }
+  }
+
+  function isAuthenticated()
+  {
+    return authStore.isAuthenticated;
   }
 
   return { count, doubleCount, countDigitsLength, increment, decrement };
