@@ -10,7 +10,9 @@ const { isAuthenticated, user } = storeToRefs(useAuthStore()); // destructuring 
   <main>
     <br />
 
-    <div v-if="isAuthenticated">User name is : {{ user.name }}</div>
+    <div v-if="isAuthenticated">
+      User name is : {{ user.first_name }} {{ user.last_name }}
+    </div>
 
     <Counter />
   </main>
